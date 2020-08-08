@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.CheckItemDao">
+
+    <!--查询检查项-->
+    <select id="findAll" resultType="com.itheima.pojo.CheckItem">
+        select * from t_checkitem
+    </select>
+
+    <!--新增检查项-->
+    <insert id="add">
+        insert into t_checkitem(code,name,sex,age,price,type,attention,remark)
+        values (#{code},#{name},#{sex},#{age},#{price},#{type},#{attention},#{remark})
+    </insert>
+
+    <!--分页查询-->
+    <select id="selectByCondition" resultType="com.itheima.pojo.CheckItem">
+        select * from t_checkitem
+        <if test="_parameter != null and _parameter != ''">
+            where code = #{value} or name = #{value}
+        </if>
+    </select>
+
+    <!--先查询检查组检查项中间表-->
+    <select id="findCountByCheckItemId" resultType="int">
+        select count(*) from t_checkgroup_checkitem where checkitem_id = #{checkItemId}
+    </select>
+
+    <!--删除检查项-->
+    <delete id="deleteById">
+        delete from t_checkitem where id = #{checkItemId}
+    </delete>
+
+    <!--回显表单数据-->
+    <select id="findById" resultType="com.itheima.pojo.CheckItem">
+        select * from t_checkitem where id = #{checkItemId}
+    </select>
+
+    <!--编辑检查项-->
+    <update id="edit">
+        update t_checkitem
+        <set>
+            <if test="code!=null and code.length>0">
+                code=#{code},
+            </if>
+            <if test="name!=null and name.length>0">
+                name=#{name},
+            </if>
+            <if test="sex!=null and sex.length>0">
+                sex=#{sex},
+            </if>
+            <if test="age!=null and age.length>0">
+                age=#{age},
+            </if>
+            <if test="price!=null">
+                price=#{price},
+            </if>
+            <if test="type!=null and type.length>0">
+                type=#{type},
+            </if>
+            <if test="remark!=null and remark.length>0">
+                remark=#{remark},
+            </if>
+            <if test="attention!=null and attention.length>0">
+                attention=#{attention},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
