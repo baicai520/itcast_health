@@ -1,2 +1,3 @@
+com\itheima\service\impl\SetMealServiceImpl.class
 com\itheima\service\impl\CheckGroupServiceImpl.class
 com\itheima\service\impl\CheckItemServiceImpl.class

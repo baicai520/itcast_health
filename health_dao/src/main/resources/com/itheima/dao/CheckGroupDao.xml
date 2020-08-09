@@ -83,4 +83,9 @@
     <delete id="deleteByGroupId">
         delete from t_checkgroup_checkitem where checkgroup_id = #{checkGroupId}
     </delete>
+
+    <!--查询所有检查组-->
+    <select id="findAll" resultType="com.itheima.pojo.CheckItem">
+        select * from t_checkgroup
+    </select>
 </mapper>

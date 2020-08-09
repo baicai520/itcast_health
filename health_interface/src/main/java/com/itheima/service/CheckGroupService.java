@@ -2,6 +2,7 @@ package com.itheima.service;
 
 import com.itheima.entity.PageResult;
 import com.itheima.pojo.CheckGroup;
+import com.itheima.pojo.CheckItem;
 
 import java.util.List;
 
@@ -55,4 +56,10 @@ public interface CheckGroupService {
      * @param checkItemIds
      */
     void edit(CheckGroup checkGroup, Integer[] checkItemIds);
+
+    /**
+     * 查询所有检查组
+     * @return
+     */
+    List<CheckItem> findAll();
 }

@@ -7,6 +7,7 @@ import com.itheima.constant.MessageConstant;
 import com.itheima.dao.CheckGroupDao;
 import com.itheima.entity.PageResult;
 import com.itheima.pojo.CheckGroup;
+import com.itheima.pojo.CheckItem;
 import com.itheima.service.CheckGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -112,6 +113,15 @@ public class CheckGroupServiceImpl implements CheckGroupService {
         checkGroupDao.deleteByGroupId(checkGroup.getId());
         //重新建立中间表关系
         setCheckGroupAndCheckItem(checkGroup.getId(),checkItemIds);
+    }
+
+    /**
+     * 查询所有检查组
+     * @return
+     */
+    @Override
+    public List<CheckItem> findAll() {
+        return checkGroupDao.findAll();
     }
 
 

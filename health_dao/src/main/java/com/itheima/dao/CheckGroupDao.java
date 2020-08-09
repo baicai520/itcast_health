@@ -2,6 +2,7 @@ package com.itheima.dao;
 
 import com.github.pagehelper.Page;
 import com.itheima.pojo.CheckGroup;
+import com.itheima.pojo.CheckItem;
 
 import java.util.List;
 import java.util.Map;
@@ -34,8 +35,9 @@ public interface CheckGroupDao {
     Page<CheckGroup> findPage(String queryString);
 
     /**
-     * 根据检查组id查询套餐检查组中间表
+     /根据检查组id查询套餐检查组中间表
      * @param checkGroupId
+     * @return
      */
     int findSetmealAndCheckGroupCountByCheckGroupId(Integer checkGroupId);
 
@@ -76,4 +78,10 @@ public interface CheckGroupDao {
      * @param checkGroupId
      */
     void deleteByGroupId(Integer checkGroupId);
+
+    /**
+     * 查询所有检查组
+     * @return
+     */
+    List<CheckItem> findAll();
 }

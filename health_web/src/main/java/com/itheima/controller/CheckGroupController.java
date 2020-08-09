@@ -6,6 +6,7 @@ import com.itheima.entity.PageResult;
 import com.itheima.entity.QueryPageBean;
 import com.itheima.entity.Result;
 import com.itheima.pojo.CheckGroup;
+import com.itheima.pojo.CheckItem;
 import com.itheima.service.CheckGroupService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,6 +116,21 @@ public class CheckGroupController {
             e.printStackTrace();
             return new Result(false, MessageConstant.EDIT_CHECKGROUP_FAIL);
 
+        }
+    }
+
+    /**
+     * 查询所有检查组
+     * @return
+     */
+    @RequestMapping(value = "/findAll" ,method = RequestMethod.GET)
+    public Result findAll() {
+        try {
+            List<CheckItem> checkItemList = checkGroupService.findAll();
+            return new Result(true, MessageConstant.QUERY_CHECKITEM_SUCCESS, checkItemList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.QUERY_CHECKITEM_FAIL);
         }
     }
 }

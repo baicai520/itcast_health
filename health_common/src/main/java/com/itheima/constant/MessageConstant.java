@@ -8,6 +8,7 @@ public class MessageConstant {
     public static final String DELETE_CHECKITEM_FAIL = "删除检查项失败";
     public static final String DELETE_CHECKITEM_SUCCESS_FAIL = "当前检查项被检查组引用，不能删除";
     public static final String DELETE_SUCCESS_SETMEALLIST_FAIL = "当前检查组被套餐引用，不能删除";
+    public static final String DELETE_SETMEAL_SUCCESS_FAIL = "当前套餐被检查组引用，不能删除";
     public static final String DELETE_CHECKITEM_SUCCESS = "删除检查项成功";
     public static final String ADD_CHECKITEM_SUCCESS = "新增检查项成功";
     public static final String ADD_CHECKITEM_FAIL = "新增检查项失败";
@@ -28,6 +29,10 @@ public class MessageConstant {
     public static final String PIC_UPLOAD_FAIL = "图片上传失败";
     public static final String ADD_SETMEAL_FAIL = "新增套餐失败";
     public static final String ADD_SETMEAL_SUCCESS = "新增套餐成功";
+    public static final String EDIT_SETMEAL_FAIL = "编辑套餐失败";
+    public static final String EDIT_SETMEAL_SUCCESS = "编辑套餐成功";
+    public static final String DELETE_SETMEAL_FAIL = "删除套餐失败";
+    public static final String DELETE_SETMEAL_SUCCESS = "删除套餐成功";
     public static final String IMPORT_ORDERSETTING_FAIL = "批量导入预约设置数据失败";
     public static final String IMPORT_ORDERSETTING_SUCCESS = "批量导入预约设置数据成功";
     public static final String GET_ORDERSETTING_SUCCESS = "获取预约设置数据成功";
