@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="health_web" />
+        <module name="health_jobs" />
         <module name="health_interface" />
         <module name="health_pojo" />
         <module name="health_dao" />

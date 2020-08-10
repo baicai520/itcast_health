@@ -81,7 +81,7 @@
     <!--根据套餐id查询套餐检查组中间表-->
     <select id="findSetmealAndCheckGroupCountBySetmealId" resultType="int">
         select count(*) from t_setmeal_checkgroup where setmeal_id = #{setMealID}
-    </select>
+</select>
 
     <!--删除套餐-->
     <delete id="delete">
